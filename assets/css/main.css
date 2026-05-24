@@ -176,6 +176,14 @@ blockquote {
   margin: 0 0 1.4em;
 }
 .hero .role .accent { color: var(--accent); font-weight: 600; }
+.hero-photo {
+  display: block;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 0 1.6em;
+}
 
 .section-title {
   font-size: 0.78rem;
