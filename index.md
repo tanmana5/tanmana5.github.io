@@ -12,17 +12,13 @@ title: Home
 <img class="hero-photo" src="{{ '/assets/img/IMG_3587.jpeg' | relative_url }}" alt="Tanmana Sadhu">
 
   <p>
-    I'm an AI researcher working on <strong>large language model agents</strong>,
-    long-horizon planning, and safety in autonomous systems. My background spans
-    computer vision and natural language processing — most recently I've been
-    interested in how language agents reason, plan, and stay aligned when the
-    stakes get higher than a single API call.
+    I'm an AI researcher working on <strong>safety and reliability</strong> in 
+   large language model based autonomous agents and embodied agents at LG Electronics' Toronto AI Lab. My background spans 
+    generative AI, computer vision and multimodal applications such as compositional retrieval. Recently, I have forayed into the realm of physical intelligence encompassing VLAs and World Models. More generally, I have been interested in how agents reason, plan, and stay aligned when operating in messy, open-world environments.
   </p>
 
   <p>
-    Before LG, my research touched image-guided navigation, augmented reality,
-    and compositional image retrieval. I like problems where the model has to
-    interact with the world and recover when something goes wrong.
+    Before LGE, my research touched on action recognition, anomaly detection and natural language understanding. I am also deeply passionate about AI for Good, and utilizing technology (or not) for solving social and environmental problems.
   </p>
 </section>
 
