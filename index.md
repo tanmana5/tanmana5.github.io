@@ -22,7 +22,7 @@ title: Home
   </p>
 </section>
 
-<p class="section-title">Selected Works</p>
+<p class="section-title">Recent Works</p>
 
 <ul class="card-list">
   <li>
