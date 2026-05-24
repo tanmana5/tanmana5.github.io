@@ -1,0 +1,15 @@
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p class="footer-left">© {{ site.time | date: "%Y" }} {{ site.author.name }}</p>
+    <p class="footer-right">
+      <a href="mailto:{{ site.author.email }}">Email</a>
+      <a href="{{ site.social.scholar }}" target="_blank" rel="noopener">Scholar</a>
+      {%- if site.social.github != "" -%}
+        <a href="https://github.com/{{ site.social.github }}" target="_blank" rel="noopener">GitHub</a>
+      {%- endif -%}
+      {%- if site.social.linkedin != "" -%}
+        <a href="{{ site.social.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
+      {%- endif -%}
+    </p>
+  </div>
+</footer>

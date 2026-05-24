@@ -1,0 +1,44 @@
+title: Tanmana Sadhu
+tagline: AI Researcher · LG Electronics
+description: >-
+  Personal site of Tanmana Sadhu — AI researcher working on LLM agents,
+  planning, and safe autonomous systems.
+
+author:
+  name: Tanmana Sadhu
+  email: tanmana.sadhu@lge.com
+
+url: "https://tanmana-sadhu.github.io"
+baseurl: ""
+
+# Social / academic links
+social:
+  github: tanmana-sadhu
+  scholar: "https://scholar.google.ca/citations?user=mSO5-8UAAAAJ&hl=en"
+  linkedin: ""        # add your LinkedIn URL
+  twitter: ""         # add your Twitter / X handle if you'd like
+  orcid: ""           # add ORCID if you have one
+
+# Jekyll build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /blog/:year/:month/:day/:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - .jekyll-cache
