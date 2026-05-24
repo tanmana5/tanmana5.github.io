@@ -1,21 +1,21 @@
-# tanmana-sadhu.github.io
+# tanmana5.github.io
 
 Personal website. Built with Jekyll, deployed via GitHub Pages.
 
 ## Quick start — deploy
 
-1. **Create a GitHub repo named exactly `tanmana-sadhu.github.io`** (the repo name must match your username + `.github.io`).
+1. **Create a GitHub repo named exactly `tanmana5.github.io`** (the repo name must match your username + `.github.io`).
 2. From this folder, initialize git and push:
    ```bash
    git init
    git add .
    git commit -m "Initial site"
    git branch -M main
-   git remote add origin https://github.com/tanmana-sadhu/tanmana-sadhu.github.io.git
+   git remote add origin https://github.com/tanmana5/tanmana5.github.io.git
    git push -u origin main
    ```
 3. In the GitHub repo, go to **Settings → Pages**. Set source to `Deploy from a branch` → `main` → `/ (root)` and save.
-4. After ~1 minute, the site is live at **https://tanmana-sadhu.github.io**.
+4. After ~1 minute, the site is live at **https://tanmana5.github.io**.
 
 That's it — no build step on your end. GitHub Pages builds Jekyll automatically.
 
