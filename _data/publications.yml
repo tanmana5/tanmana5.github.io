@@ -1,15 +1,14 @@
 # Edit this file to add, remove, or update publications.
 # Order matters — list the most recent / important first.
 
-- title: "Can We Rely on LLM Agents to Draft Long-Horizon Plans? Let's Take TravelPlanner as an Example"
-  authors: "Y. Chen, T. Sadhu, et al."
-  venue: "arXiv preprint"
-  year: 2024
-  citations: 31
+- title: "VESTABENCH: An Embodied Benchmark for Safe Long-Horizon Planning Under Multi-Constraint and Adversarial Settings"
+  authors: "T. Sadhu, et al."
+  venue: "EMNLP"
+  year: 2025
+  citations: 2
   links:
-    paper: "https://scholar.google.ca/citations?user=mSO5-8UAAAAJ&hl=en"
-    # arxiv: ""
-    # code: ""
+    paper: "https://aclanthology.org/2025.emnlp-industry.149.pdf"
+
 
 - title: "ATHENA: Safe Autonomous Agents with Verbal Contrastive Learning"
   authors: "T. Sadhu, et al."
@@ -24,29 +23,5 @@
   venue: "EMNLP Findings"
   year: 2022
   citations: 6
-  links:
-    paper: "https://scholar.google.ca/citations?user=mSO5-8UAAAAJ&hl=en"
-
-- title: "Obstacle Detection for Image-Guided Surface Water Navigation"
-  authors: "T. Sadhu, A. B. Albu, et al."
-  venue: "Conference on Computer and Robot Vision (CRV)"
-  year: 2016
-  citations: 9
-  links:
-    paper: "https://scholar.google.ca/citations?user=mSO5-8UAAAAJ&hl=en"
-
-- title: "Augmented Reality Visualization for Sailboats (ARVS)"
-  authors: "E. Wisernig, T. Sadhu, et al."
-  venue: "International Conference on Cyberworlds"
-  year: 2015
-  citations: 16
-  links:
-    paper: "https://scholar.google.ca/citations?user=mSO5-8UAAAAJ&hl=en"
-
-- title: "Color Image Segmentation Using Semi-Supervised Self-Organization Feature Map"
-  authors: "A. Halder, T. Sadhu, et al."
-  venue: "Journal article"
-  year: 2014
-  citations: 11
   links:
     paper: "https://scholar.google.ca/citations?user=mSO5-8UAAAAJ&hl=en"

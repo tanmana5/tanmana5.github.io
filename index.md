@@ -26,21 +26,21 @@ title: Home
   </p>
 </section>
 
-<p class="section-title">Selected work</p>
+<p class="section-title">Selected Works</p>
 
 <ul class="card-list">
+  <li>
+    <a class="card" href="{{ '/research/' | relative_url }}">
+      <p class="title">VestaBench: An Embodied Benchmark for Safe Long-Horizon Planning Under Multi-Constraint and Adversarial Settings</p>
+      <p class="meta">arXiv 2024</p>
+      <p class="desc">Safety reasoning for embodied AI agents that interact with their physical environments to complete tasks. VESTABENCH is a benchmark curated using VirtualHome and BEHAVIOR-100, including tasks that can be achieved safely under adversarial and multi-constraint settings, as well as adversarial instructions.</p>
+    </a>
+  </li>
   <li>
     <a class="card" href="{{ '/research/' | relative_url }}">
       <p class="title">ATHENA — Safe autonomous agents with verbal contrastive learning</p>
       <p class="meta">EMNLP 2024</p>
       <p class="desc">Training LLM agents to recognize and avoid unsafe actions through contrastive verbal reasoning.</p>
-    </a>
-  </li>
-  <li>
-    <a class="card" href="{{ '/research/' | relative_url }}">
-      <p class="title">TravelPlanner — Can LLM agents draft long-horizon plans?</p>
-      <p class="meta">arXiv 2024</p>
-      <p class="desc">A close look at where today's LLM planners break down on realistic multi-day, multi-constraint itineraries.</p>
     </a>
   </li>
 </ul>
