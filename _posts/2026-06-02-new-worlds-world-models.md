@@ -4,7 +4,7 @@ date: 2026-06-02
 tags: [llm-agents, planning, world-models, robotics, physical-ai, generative-ai]
 ---
 
-Think about how you catch a falling cup. You don’t run a billion-parameter calculation on fluid dynamics. Your brain has a built-in "physics engine" trained on a lifetime of drops, spills, and gravity. You anticipate what happens next, and you act.
+Think about how you catch a falling cup. You don’t run a billion-parameter calculation on fluid dynamics. Your brain has a built-in "physics engine" trained on a lifetime of drops, spills, and gravity. You anticipate what happens next, and you act (admittedly gravity and other pesky physical forces can be quite annoying sometimes, especially when there's a spillage to clean up :/).
 
 This "brain" is a system that can be represented by a **World Model**.
 
