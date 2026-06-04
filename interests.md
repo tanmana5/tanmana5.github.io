@@ -2,6 +2,7 @@
 layout: default
 title: Interests
 permalink: /interests/
+description: "Personal interests of Tanmana Sadhu — reading, making, the outdoors, and what I'm paying attention to right now."
 ---
 
 # Interests

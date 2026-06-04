@@ -2,6 +2,7 @@
 layout: default
 title: Blog
 permalink: /blog/
+description: "Notes by Tanmana Sadhu on LLM agents, planning, safety, and papers worth reading."
 ---
 
 # Blog

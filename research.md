@@ -2,6 +2,7 @@
 layout: default
 title: Research
 permalink: /research/
+description: "Selected publications and research interests of Tanmana Sadhu — LLM agents, planning, safety and alignment, and vision–language grounding."
 ---
 
 # Research

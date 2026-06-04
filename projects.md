@@ -2,6 +2,7 @@
 layout: default
 title: Projects
 permalink: /projects/
+description: "Side projects, research code, and experiments by Tanmana Sadhu."
 ---
 
 # Projects

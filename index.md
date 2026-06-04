@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Home
+description: "Tanmana Sadhu — AI researcher at LG Electronics working on LLM agents, long-horizon planning, and safety for autonomous systems."
 ---
 
 <section class="hero">

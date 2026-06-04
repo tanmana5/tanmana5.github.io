@@ -1,6 +1,7 @@
 ---
 title: "New Worlds: Exploring with World Models"
 date: 2026-06-02
+description: "How Genie 3, Cosmos 3, V-JEPA 2, and DreamerV3 represent four fundamentally different bets on what a world model should be."
 tags: [llm-agents, planning, world-models, robotics, physical-ai, generative-ai]
 ---
 
