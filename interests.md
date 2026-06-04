@@ -15,7 +15,7 @@ I would probably categorize my favourites as science fiction, YA, and the classi
 
 <p class="section-title">Creating</p>
 
-In my very limited free time, I also think about publishing the children's stories I've created or complete the YA novel idea I really want to flesh out. Hopefully someday.
+In my very limited free time, I also think about publishing the children's stories I've created or the YA novel I really want to flesh out. Hopefully someday.
 
 <p class="section-title">Movement</p>
 
