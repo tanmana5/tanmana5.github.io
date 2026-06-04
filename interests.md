@@ -21,7 +21,7 @@ In my very limited free time, I also think about publishing the children's stori
 
 <p class="section-title">Movement</p>
 
-Nature walks are my reset button. The Westsong Walkway and West Bay Walkway near home are my regulars. Also totally rely on my mat Pilates practice to get me through the week!
+Nature walks are my reset button. The Westsong Walkway and West Bay Walkway near home are my regulars (will occasionally squeeze in a podcast). Also totally rely on my mat Pilates practice to get me through the week!
 
 <p class="section-title">Travels</p>
 
