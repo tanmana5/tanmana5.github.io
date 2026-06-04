@@ -23,4 +23,4 @@ Nature walks are my reset button. The Westsong Walkway and West Bay Walkway near
 
 <p class="section-title">Travels</p>
 
-Of late, I've become enamored with visiting mangroves, rainforests and other fragile ecosystems of the world. Over the past two years I've actually made it to the *Sundarbans*, the Everglades, a part of SE Asia, and Cayman Islands in the Caribbean, getting to witness firsthand the magic of mangroves, tides, and even bioluminescence. Consider myself lucky, but hopefully only getting started.
+Of late, I've become enamored with visiting mangroves, rainforests and other fragile ecosystems of the world. I don't think I can ever get over how truly beautiful the Earth is, and I can't stop marvelling at the visceral diversity of tropical landscapes. Over the past two years I've actually made it to the *Sundarbans*, the Everglades, a part of SE Asia, and Cayman Islands in the Caribbean, getting to witness firsthand the magic of mangroves, tides, and even bioluminescence. Consider myself lucky, but hopefully only getting started.
