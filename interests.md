@@ -15,7 +15,7 @@ I would probably categorize my favourites as science fiction, YA, and the classi
 
 <p class="section-title">Creating</p>
 
-I launched a group in LinkedIn about a year ago, with the hope of bringing together like-minded individuals working on AI for Good initiatives in Earth Observation, Environment and Conservation. I post regularly in the group, and it has helped me forge meaningful, collaborative connections with people across the globe.
+I launched a group in LinkedIn called *AI for Good - Earth, Climate Change, Environment, Sustainability*. It has helped me forge meaningful, collaborative connections with people across the globe and given me insights into something I care about - the usage of technology in the right way, to benefit people everywhere and take care of the Earth.
 
 In my very limited free time, I also think about publishing the children's stories I've created or the YA novel I really want to flesh out. Hopefully someday.
 
