@@ -17,7 +17,7 @@ I would probably list my favourite genres as science fiction, YA, and the classi
 
 I created a group in LinkedIn called *AI for Good - Earth, Climate Change, Environment, Sustainability*. It has helped me forge meaningful, collaborative connections with people across the globe and given me insights into something I care about - the usage of technology in the right way, to benefit people equitably and take care of our planet.
 
-In my very limited free time, I also think about publishing the children's stories I've created or the YA novel I really want to flesh out. Hopefully someday.
+Whenever I can, I also think about publishing the children's stories I've created or the YA novel I really want to flesh out. Hopefully someday.
 
 <p class="section-title">Movement</p>
 
