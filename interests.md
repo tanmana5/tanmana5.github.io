@@ -15,7 +15,7 @@ I would probably categorize my favourites as science fiction, YA, and the classi
 
 <p class="section-title">Creating</p>
 
-I launched a group in LinkedIn called *AI for Good - Earth, Climate Change, Environment, Sustainability*. It has helped me forge meaningful, collaborative connections with people across the globe and given me insights into something I care about - the usage of technology in the right way, to benefit people everywhere and take care of the Earth.
+I launched a group in LinkedIn called *AI for Good - Earth, Climate Change, Environment, Sustainability*. It has helped me forge meaningful, collaborative connections with people across the globe and given me insights into something I care about - the usage of technology in the right way, to benefit people equitably and take care of our planet.
 
 In my very limited free time, I also think about publishing the children's stories I've created or the YA novel I really want to flesh out. Hopefully someday.
 
@@ -25,4 +25,4 @@ Nature walks are my reset button. The Westsong Walkway and West Bay Walkway near
 
 <p class="section-title">Travels</p>
 
-Of late, I've become enamored with visiting mangroves, rainforests and other fragile ecosystems of the world. I don't think I can ever get over how truly beautiful the Earth is, and I can't stop marvelling at the visceral diversity of tropical landscapes. Over the past two years I've actually made it to the *Sundarbans*, the Everglades, a part of SE Asia, and Cayman Islands in the Caribbean, getting to witness firsthand the magic of mangroves, tides, and even bioluminescence. Consider myself lucky, but hopefully only getting started.
+Of late, I've become enamored with visiting mangroves, rainforests and other fragile ecosystems of the world. I don't think I can ever get over how truly beautiful the Earth is, and I can't stop marvelling at the visceral diversity of tropical landscapes. Over the past two years I've actually made it to the *Sundarbans* in India, the Everglades, Singapore and Cayman Islands in the Caribbean, getting to witness firsthand the magic of mangroves, tides, and even [bioluminescence](https://caymanresident.com/bioluminescent-bay). Consider myself lucky, but hopefully only getting started.
