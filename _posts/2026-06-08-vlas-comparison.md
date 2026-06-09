@@ -1,3 +1,10 @@
+---
+title: "A Quick Comparison of the Latest VLA Architectures"
+date: 2026-06-08
+description: "How modern Vision-Language-Action models bridge high-level semantic reasoning with high-frequency motor control across four architectural axes."
+tags: [vla, robotics, vision-language-action, foundation-models, world-models]
+---
+
 The landscape of Vision-Language-Action (VLA) models has fundamentally shifted from early experiments to highly optimized, production-grade architectures. The architectural evolution focuses heavily on solving the trade-offs between **high-level semantic reasoning** (internet-scale text/image data) and **low-level physical dexterity** (high-frequency, smooth robot control).
 
 Modern VLA architectures can be categorized and compared across three core dimensions: **Macro-Architecture** (Single vs. Dual systems), **Action Representation & Decoding Heads**, and **Emerging Alternatives** (Unified vs. Modular).
@@ -20,8 +27,8 @@ These architectures process vision, language, and robot states simultaneously wi
 
 Inspired by cognitive science, this approach decouples the VLA into two asynchronous subsystems to handle the frequency mismatch.
 
-* **System 2 (S2 - High-Level Reasoning):** An internet-scale VLM running at a lower frequency (e.g., 5–10 Hz). It handles scene understanding, language comprehension, and long-horizon task planning, outputting dense semantic/spatial latent representations.
-* **System 1 (S1 - Low-Level Visuomotor Policy):** A much smaller, highly efficient network running at a high frequency (e.g., 200 Hz) locally on the robot. It ingests the latents from S2 along with real-time proprioceptive feedback to produce continuous motor control (torques, joint velocities).
+* **System 2 (S2, High-Level Reasoning):** An internet-scale VLM running at a lower frequency (e.g., 5–10 Hz). It handles scene understanding, language comprehension, and long-horizon task planning, outputting dense semantic/spatial latent representations.
+* **System 1 (S1, Low-Level Visuomotor Policy):** A much smaller, highly efficient network running at a high frequency (e.g., 200 Hz) locally on the robot. It ingests the latents from S2 along with real-time proprioceptive feedback to produce continuous motor control (torques, joint velocities).
 * **Pros:** Solves the latency bottleneck; enables complex, whole-body, and highly dexterous humanoid control.
 
 ---
@@ -32,14 +39,10 @@ The way a VLA represents and outputs an "action" determines its smoothness, prec
 
 | Action Head Type | Representative Models | How It Formulates Action | Architectural Impact & Trade-offs |
 | --- | --- | --- | --- |
-| **Discrete Tokens** | RT-2, OpenVLA | Actions are quantized into integer bins and treated exactly like text tokens. | **Pros:** Utilizes standard LLM cross-entropy loss and sequence prediction. <br>
-
-<br>**Cons:** Jerky, single-step execution; high context-window inflation. |
+| **Discrete Tokens** | RT-2, OpenVLA | Actions are quantized into integer bins and treated exactly like text tokens. | **Pros:** Utilizes standard LLM cross-entropy loss and sequence prediction. <br>**Cons:** Jerky, single-step execution; high context-window inflation. |
 | **Chunked Prediction** | SmolVLA, MolmoAct 2 | Predicts a vector/sequence of future actions at once (e.g., the next 10–50 time-steps). | **Pros:** Compute-efficient inference; significantly smoother trajectories than single-step tokens. |
 | **Flow Matching** | $\pi_0$ (Pi-Zero), $\pi_{0.5}$ | Generates trajectories by iteratively denoising a random sample via flow-matching. | **Pros:** Exceptional at handling multi-modal action distributions (tasks with multiple valid paths). |
-| **Diffusion** | Octo | Uses a DDPM-style diffusion process to iteratively refine a predicted action sequence. | **Pros:** Robust multi-modal action trajectories. <br>
-
-<br>**Cons:** Multiple denoising forward passes increase inference latency. |
+| **Diffusion** | Octo | Uses a DDPM-style diffusion process to iteratively refine a predicted action sequence. | **Pros:** Robust multi-modal action trajectories. <br>**Cons:** Multiple denoising forward passes increase inference latency. |
 
 ---
 
@@ -53,11 +56,33 @@ Architecturally, this is being addressed through **Feature Token Modulation (FTM
 
 ## 4. The Next Frontier: World Unified Models (WUM) vs. VLAs
 
-As the limitations of purely autoregressive or modular VLAs surface—specifically the **Symbol Grounding Problem** (understanding the words "an apple falls" without an intrinsic understanding of gravity)—the architecture is shifting toward **World Unified Models (WUMs)** or **Latent World Models**.
+As the limitations of purely autoregressive or modular VLAs surface, specifically the **Symbol Grounding Problem** (understanding the words "an apple falls" without an intrinsic understanding of gravity), the architecture is shifting toward **World Unified Models (WUMs)** or **Latent World Models**.
 
-* **The VLA Limitation:** Traditional VLAs lack casual reasoning or physics intuition, struggling with long-horizon planning because they cannot predict future environmental states.
-* **The WUM/World Model Shift (e.g., Meta V-JEPA 2, WALL-B):** Instead of training vision, text, and action as interconnected blocks, a WUM trains them *jointly* with physics prediction from day one. Systems like **V-JEPA 2** predict future states in **latent space** rather than pixel space.
+* **The VLA Limitation:** Traditional VLAs lack causal reasoning or physics intuition, struggling with long-horizon planning because they cannot predict future environmental states.
+* **The WUM/World Model Shift (e.g., Meta V-JEPA 2, WALL-OSS):** Instead of training vision, text, and action as interconnected blocks, a WUM trains them *jointly* with physics prediction from day one. Systems like **V-JEPA 2** predict future states in **latent space** rather than pixel space.
 
-By learning the underlying physics of the world from millions of hours of passive video *before* appending robot data, these architectures achieve up to 30$\times$ faster planning speeds and zero-shot generalization to completely unseen physical environments.
+By learning the underlying physics of the world from millions of hours of passive video *before* appending robot data, these architectures achieve up to 30$\times$ faster planning speeds (V-JEPA 2-AC reportedly plans in about 16 seconds per action versus roughly 4 minutes for NVIDIA Cosmos) and zero-shot generalization to completely unseen physical environments.
 
-Are you evaluating these VLA architectures for deployment on a specific robotic platform (like a robotic arm or a humanoid), or are you looking at modifying an open-source backbone for a custom action space?
+---
+
+## References
+
+**Single-system VLAs**
+- [RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control](https://arxiv.org/abs/2307.15818) — Google DeepMind
+- [OpenVLA: An Open-Source Vision-Language-Action Model](https://arxiv.org/abs/2406.09246) — Stanford
+- [$\pi_0$: A Vision-Language-Action Flow Model for General Robot Control](https://arxiv.org/abs/2410.24164) — Physical Intelligence
+
+**Dual-system VLAs**
+- [Helix: A Vision-Language-Action Model for Generalist Humanoid Control](https://www.figure.ai/news/helix) — Figure AI
+- [GR00T N1: An Open Foundation Model for Generalist Humanoid Robots](https://arxiv.org/abs/2503.14734) — NVIDIA
+
+**Action representations**
+- [Octo: An Open-Source Generalist Robot Policy](https://arxiv.org/abs/2405.12213) — diffusion-based action head
+
+**Spatial brittleness and adapter methods**
+- [VLA Models Are More Generalizable Than You Think: Revisiting Physical and Spatial Modeling](https://arxiv.org/abs/2512.02902) — introduces FTM and FLA; reports FTM improving Libero viewpoint accuracy from 48.5% to 87.1% with ~4K parameters
+
+**World models for robotics**
+- [V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning](https://arxiv.org/abs/2506.09985) — Meta; source of the 30× speedup over Cosmos for zero-shot planning
+- [Introducing V-JEPA 2](https://ai.meta.com/research/vjepa/) — Meta AI research page
+- [WorldVLA: Towards Autoregressive Action World Model](https://arxiv.org/abs/2506.21539) — autoregressive action-world-model line of work (WALL-OSS family)
