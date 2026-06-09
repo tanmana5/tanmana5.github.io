@@ -15,7 +15,7 @@ Modern VLA architectures can be categorized and compared across three core dimen
 
 How the model bridges high-level vision-language understanding with high-frequency motor control is the defining architectural split.
 
-### Single-System Architecture (e.g., RT-2, OpenVLA, $\pi_0$)
+### Single-System Architecture (e.g., RT-2, OpenVLA, π₀)
 
 These architectures process vision, language, and robot states simultaneously within a single, end-to-end neural network. A pre-trained Vision-Language Model (VLM) backbone is typically modified by appending or integrating an action-prediction mechanism directly into its transformer layers.
 
@@ -41,16 +41,16 @@ The way a VLA represents and outputs an "action" determines its smoothness, prec
 | --- | --- | --- | --- |
 | **Discrete Tokens** | RT-2, OpenVLA | Actions are quantized into integer bins and treated exactly like text tokens. | **Pros:** Utilizes standard LLM cross-entropy loss and sequence prediction. <br>**Cons:** Jerky, single-step execution; high context-window inflation. |
 | **Chunked Prediction** | SmolVLA, MolmoAct 2 | Predicts a vector/sequence of future actions at once (e.g., the next 10–50 time-steps). | **Pros:** Compute-efficient inference; significantly smoother trajectories than single-step tokens. |
-| **Flow Matching** | $\pi_0$ (Pi-Zero), $\pi_{0.5}$ | Generates trajectories by iteratively denoising a random sample via flow-matching. | **Pros:** Exceptional at handling multi-modal action distributions (tasks with multiple valid paths). |
+| **Flow Matching** | π₀ (Pi-Zero), π₀.₅ | Generates trajectories by iteratively denoising a random sample via flow-matching. | **Pros:** Exceptional at handling multi-modal action distributions (tasks with multiple valid paths). |
 | **Diffusion** | Octo | Uses a DDPM-style diffusion process to iteratively refine a predicted action sequence. | **Pros:** Robust multi-modal action trajectories. <br>**Cons:** Multiple denoising forward passes increase inference latency. |
 
 ---
 
 ## 3. The Vision/Spatial Bottleneck: Token Modulation
 
-A major architectural vulnerability identified in standard transformer-based VLAs ($\pi_{0.5}$, OpenVLA) is **spatial brittleness**. While their physical modeling (understanding how to move an arm) is robust, their performance degrades heavily under out-of-distribution camera viewpoints or lighting changes.
+A major architectural vulnerability identified in standard transformer-based VLAs (π₀.₅, OpenVLA) is **spatial brittleness**. While their physical modeling (understanding how to move an arm) is robust, their performance degrades heavily under out-of-distribution camera viewpoints or lighting changes.
 
-Architecturally, this is being addressed through **Feature Token Modulation (FTM)** or **Feature Linear Adaptation (FLA)**. Instead of globally fine-tuning a massive VLA for a new environment, lightweight adaptation layers ($\sim$4K parameters) are injected strictly after the frozen vision encoder (e.g., ViT, SigLIP) to modulate visual tokens before they hit the multimodal transformer decoder. This keeps the core VLA weights frozen while realigning spatial perception.
+Architecturally, this is being addressed through **Feature Token Modulation (FTM)** or **Feature Linear Adaptation (FLA)**. Instead of globally fine-tuning a massive VLA for a new environment, lightweight adaptation layers (~4K parameters) are injected strictly after the frozen vision encoder (e.g., ViT, SigLIP) to modulate visual tokens before they hit the multimodal transformer decoder. This keeps the core VLA weights frozen while realigning spatial perception.
 
 ---
 
@@ -61,7 +61,7 @@ As the limitations of purely autoregressive or modular VLAs surface, specificall
 * **The VLA Limitation:** Traditional VLAs lack causal reasoning or physics intuition, struggling with long-horizon planning because they cannot predict future environmental states.
 * **The WUM/World Model Shift (e.g., Meta V-JEPA 2, WALL-OSS):** Instead of training vision, text, and action as interconnected blocks, a WUM trains them *jointly* with physics prediction from day one. Systems like **V-JEPA 2** predict future states in **latent space** rather than pixel space.
 
-By learning the underlying physics of the world from millions of hours of passive video *before* appending robot data, these architectures achieve up to 30$\times$ faster planning speeds (V-JEPA 2-AC reportedly plans in about 16 seconds per action versus roughly 4 minutes for NVIDIA Cosmos) and zero-shot generalization to completely unseen physical environments.
+By learning the underlying physics of the world from millions of hours of passive video *before* appending robot data, these architectures achieve up to 30× faster planning speeds (V-JEPA 2-AC reportedly plans in about 16 seconds per action versus roughly 4 minutes for NVIDIA Cosmos) and zero-shot generalization to completely unseen physical environments.
 
 ---
 
@@ -70,7 +70,7 @@ By learning the underlying physics of the world from millions of hours of passiv
 **Single-system VLAs**
 - [RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control](https://arxiv.org/abs/2307.15818) — Google DeepMind
 - [OpenVLA: An Open-Source Vision-Language-Action Model](https://arxiv.org/abs/2406.09246) — Stanford
-- [$\pi_0$: A Vision-Language-Action Flow Model for General Robot Control](https://arxiv.org/abs/2410.24164) — Physical Intelligence
+- [π₀: A Vision-Language-Action Flow Model for General Robot Control](https://arxiv.org/abs/2410.24164) — Physical Intelligence
 
 **Dual-system VLAs**
 - [Helix: A Vision-Language-Action Model for Generalist Humanoid Control](https://www.figure.ai/news/helix) — Figure AI
