@@ -2,7 +2,7 @@
 # Order matters — list the most recent / important first.
 
 - title: "VESTABENCH: An Embodied Benchmark for Safe Long-Horizon Planning Under Multi-Constraint and Adversarial Settings"
-  authors: "T. Sadhu, et al."
+  authors: "T. Sadhu, Y. Chen, A. Pesaranghader"
   venue: "EMNLP"
   year: 2025
   citations: 2
@@ -11,17 +11,17 @@
 
 
 - title: "ATHENA: Safe Autonomous Agents with Verbal Contrastive Learning"
-  authors: "T. Sadhu, et al."
+  authors: "T. Sadhu, A. Pesaranghader, Y. Chen, D. H. Yi"
   venue: "EMNLP"
   year: 2024
   citations: 7
   links:
-    paper: "https://scholar.google.ca/citations?user=mSO5-8UAAAAJ&hl=en"
+    paper: "https://aclanthology.org/2024.emnlp-industry.84/"
 
-- title: "Exploring Compositional Image Retrieval with Hybrid Compositional Learning"
-  authors: "C. Wang, T. Sadhu, et al."
+- title: "Exploring Compositional Image Retrieval with Hybrid Compositional Learning and Heuristic Negative Mining"
+  authors: "C. Wang, E. Nezhadarya, T. Sadhu, S. Zhang"
   venue: "EMNLP Findings"
   year: 2022
   citations: 6
   links:
-    paper: "https://scholar.google.ca/citations?user=mSO5-8UAAAAJ&hl=en"
+    paper: "https://aclanthology.org/2022.findings-emnlp.92/"
