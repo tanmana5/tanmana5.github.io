@@ -7,22 +7,15 @@ description: "Side projects, research code, and experiments by Tanmana Sadhu."
 
 # Projects
 
-A loose collection of things I've built or am building — research code, side projects,
-and the occasional experiment.
+A loose collection of things I've built, am building, or written about: research code,
+side projects, essays, and the occasional experiment.
 
 <ul class="card-list">
   <li>
-    <a class="card" href="#">
-      <p class="title">Project title</p>
-      <p class="meta">2025 · Python, PyTorch</p>
-      <p class="desc">One-line description of what it is and why it's interesting.</p>
-    </a>
-  </li>
-  <li>
-    <a class="card" href="#">
-      <p class="title">Another project</p>
-      <p class="meta">2024 · TypeScript</p>
-      <p class="desc">Short summary. Replace with real entries — see <code>projects.md</code> in the repo.</p>
+    <a class="card" href="https://www.linkedin.com/pulse/swamp-tigers-salinity-sunderbans-tanmana-sadhu-dfp3c/" target="_blank" rel="noopener">
+      <p class="title">Swamp Tigers and Salinity in the Sunderbans</p>
+      <p class="meta">March 2026 · LinkedIn article</p>
+      <p class="desc">How rising salinity in the Sunderbans mangrove forest is threatening Bengal tigers, pushing them toward human settlements as freshwater sources dwindle and sea levels rise.</p>
     </a>
   </li>
 </ul>
@@ -30,5 +23,5 @@ and the occasional experiment.
 <p class="section-title">In progress</p>
 
 <div class="empty">
-  Add work-in-progress items here — sketches, half-finished experiments, things you'd like feedback on.
+  
 </div>
