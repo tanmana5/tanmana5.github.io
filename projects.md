@@ -17,6 +17,7 @@ side projects, essays, and the occasional experiment.
       <p class="meta">March 2026 · LinkedIn article</p>
       <p class="desc">How rising salinity in the Sunderbans mangrove forest is threatening Bengal tigers, pushing them toward human settlements as freshwater sources dwindle and sea levels rise.</p>
     </a>
+    <p class="card-more">→ <a href="{{ '/travels/sundarbans/' | relative_url }}">Photos from the trip</a></p>
   </li>
 </ul>
 
