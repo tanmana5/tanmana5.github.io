@@ -7,8 +7,8 @@ description: "Selected publications and research interests of Tanmana Sadhu — 
 
 # Research
 
-I work on language-model agents that have to plan, act, and stay safe in environments more
-complex than single-turn chat. Below are selected publications — the full list lives on
+I work on agents that have to plan, act, and stay safe in environments more
+complex than single-turn chat. Below are selected publications. The full list lives on
 [Google Scholar]({{ site.social.scholar }}).
 
 <p class="section-title">Publications</p>
