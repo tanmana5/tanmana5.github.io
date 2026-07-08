@@ -29,3 +29,5 @@ the Sundarbans](https://www.linkedin.com/pulse/swamp-tigers-salinity-sunderbans-
   Photographs coming soon.
 </div>
 {% endif %}
+
+<p class="gallery-copyright">All photographs © 2026 Tanmana Sadhu. Please do not reproduce without permission.</p>
