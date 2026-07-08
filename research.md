@@ -37,6 +37,7 @@ complex than single-turn chat. Below are selected publications. The full list li
 - **LLM agents & planning** — how language models reason over long horizons, recover from failure, and interact with tools and environments.
 - **Safety & alignment for agents** — verbal contrastive learning, refusal behavior, and detecting unsafe action sequences before they execute.
 - **Vision–language grounding** — earlier work on compositional image retrieval and image-guided navigation.
+- **Anomaly Detection** — flagging anomalous events in video
 
 <p class="section-title">Collaborations & talks</p>
 
