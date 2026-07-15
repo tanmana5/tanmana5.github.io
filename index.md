@@ -19,7 +19,7 @@ description: "Tanmana Sadhu — AI researcher at LG Electronics working on LLM a
   </p>
 
   <p>
-    Before LGE, my research touched on action recognition, anomaly detection and natural language understanding. I am also deeply passionate about AI for Good, and utilizing technology (or not) for solving social and environmental problems.
+    Before LGE, my research touched on action recognition, anomaly detection and natural language understanding. I am also deeply passionate about AI for Good, and utilizing technology (or not 😄) for solving social and environmental problems.
   </p>
 </section>
 
