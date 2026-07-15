@@ -28,8 +28,15 @@ description: "Tanmana Sadhu — AI researcher at LG Electronics working on LLM a
 <ul class="card-list">
   <li>
     <a class="card" href="{{ '/research/' | relative_url }}">
+      <p class="title">SafeCasa: A Benchmark Dataset for Physical Safety in Household Robotic Manipulation</p>
+      <p class="meta">RSS Workshop 2026</p>
+      <p class="desc">A benchmark dataset for evaluating physical safety in household robotic manipulation, targeting the everyday risks a robot has to reason about when operating around people and objects at home.</p>
+    </a>
+  </li>
+  <li>
+    <a class="card" href="{{ '/research/' | relative_url }}">
       <p class="title">VestaBench: An Embodied Benchmark for Safe Long-Horizon Planning Under Multi-Constraint and Adversarial Settings</p>
-      <p class="meta">arXiv 2024</p>
+      <p class="meta">EMNLP 2025</p>
       <p class="desc">Safety reasoning for embodied AI agents that interact with their physical environments to complete tasks. VESTABENCH is a benchmark curated using VirtualHome and BEHAVIOR-100, including tasks that can be achieved safely under adversarial and multi-constraint settings, as well as adversarial instructions.</p>
     </a>
   </li>
