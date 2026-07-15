@@ -1,6 +1,14 @@
 # Edit this file to add, remove, or update publications.
 # Order matters — list the most recent / important first.
 
+- title: "SafeCasa: A Benchmark Dataset for Physical Safety in Household Robotic Manipulation"
+  authors: "Y. Kim, H. Lee, S. Park, D. Kim, A. W. Olson, T. Sadhu, A. Pesaranghader"
+  venue: "RSS Workshop on Trustworthy Embodied Foundation Models"
+  year: 2026
+  links:
+    paper: "https://openreview.net/forum?id=hr0QhMBEKA"
+
+
 - title: "VESTABENCH: An Embodied Benchmark for Safe Long-Horizon Planning Under Multi-Constraint and Adversarial Settings"
   authors: "T. Sadhu, Y. Chen, A. Pesaranghader"
   venue: "EMNLP"
