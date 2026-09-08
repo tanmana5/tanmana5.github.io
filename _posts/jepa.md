@@ -1,0 +1,412 @@
+---
+title: "From JEPA to LeVJEPA: How Predictive Representations Are Evolving Toward World Models"
+date: 2026-09-08
+math: true
+---
+
+# From JEPA to LeVJEPA: How Predictive Representations Are Evolving Toward World Models
+
+One of the more interesting trends in representation learning over the past few years has been the evolution of **JEPA — Joint Embedding Predictive Architecture**.
+
+At first glance, JEPA can sound like just another self-supervised learning framework. But it’s built on a deeper idea:
+
+> **Instead of trying to reconstruct exactly what the world looks like, learn to predict a useful representation of what the world will look like.**
+> 
+
+That seemingly small shift has important implications—especially for robotics and world models.
+
+The progression from **I-JEPA → V-JEPA → V-JEPA 2 → LeJEPA → LeVJEPA** shows how this idea has moved from learning representations of static images toward representations that capture **time, actions, and potentially the dynamics of the physical world**.
+
+---
+
+## 1. I-JEPA: Don’t Predict Pixels, Predict Representations
+
+The original I-JEPA, introduced for images, starts with a simple problem.
+
+Suppose we hide part of an image. A traditional generative model might try to reconstruct the missing pixels.
+
+JEPA takes a different approach.
+
+Instead of asking:
+
+> *“What are the exact pixels in the missing region?”*
+> 
+
+it asks:
+
+> *“What should the representation of the missing region look like?”*
+> 
+
+Conceptually:
+
+```
+        Image
+          ↓
+   Visible regions
+          ↓
+   Context encoder
+          ↓
+  Context representation
+          ↓
+        Predictor
+          ↓
+Predicted target representation
+          ↑
+          │
+  Target representation
+```
+
+The model learns by bringing the predicted representation close to the representation of the true target.
+
+The key idea is that **the model doesn’t need to reproduce every visual detail**.
+
+If the hidden region contains a chair, for example, the model doesn’t need to predict every pixel of the chair. It needs to learn a representation that captures the meaningful structure.
+
+This is one of the philosophical differences between JEPA and pixel-reconstruction approaches such as masked autoencoders.
+
+The goal is not:
+
+**“Can I generate the missing pixels?”**
+
+but rather:
+
+**“Have I learned a representation that captures what matters?”**
+
+---
+
+## 2. V-JEPA: Bring the Idea Into Video
+
+The next obvious question is: what happens when we move from images to video?
+
+That’s where **V-JEPA** comes in.
+
+A video contains something an image doesn’t: **time**.
+
+Objects move. People interact with objects. Robots move their arms. Things fall, collide, open, close, and change state.
+
+V-JEPA therefore learns to predict representations of missing **spatiotemporal regions** of a video.
+
+Instead of:
+
+$$\text{visible image} \rightarrow \text{missing image}$$
+
+we now have something more like:
+
+$$\text{visible video} \rightarrow \text{missing video representation}$$
+
+The important shift is that the representation now has to capture **temporal structure**.
+
+The model is no longer just learning:
+
+> “What does a cup look like?”
+> 
+
+It can begin learning:
+
+> “How does a cup relate to the surrounding scene as things change over time?”
+> 
+
+This starts to look much more like the ingredients needed for a world model.
+
+But there’s an important distinction:
+
+**V-JEPA is still primarily a representation learner.**
+
+It isn’t automatically a complete robotics world model that takes an action and predicts what will happen.
+
+---
+
+## 3. V-JEPA 2: From Representation to Physical Prediction
+
+This is where the story becomes especially interesting for robotics.
+
+**V-JEPA 2** pushes the JEPA framework toward understanding the consequences of actions.
+
+Now we can think of the model as learning something closer to:
+
+$$(z_t, a_t) \rightarrow \hat{z}_{t+1}$$
+
+where:
+
+- $z_t$ is the current latent representation of the world
+- $a_t$ is a robot action
+- $\hat{z}_{t+1}$ is the predicted future representation
+
+This changes the question the model can answer.
+
+Instead of only asking:
+
+> “What does the world look like?”
+> 
+
+we can ask:
+
+> **“What is likely to happen if I do this?”**
+> 
+
+That’s much closer to the definition of a **world model**.
+
+Imagine a robot looking at a cup near the edge of a table.
+
+A purely visual representation might encode:
+
+> “There is a cup on a table.”
+> 
+
+An action-conditioned predictive model can potentially learn something closer to:
+
+> “If I push the cup in this direction, its state will change in this way.”
+> 
+
+That ability to reason about **action → consequence** is fundamental to planning.
+
+---
+
+## 4. LeJEPA: Simplifying How We Learn the Representation
+
+While the JEPA family was becoming increasingly predictive, another question emerged:
+
+> **Can we learn these representations without all the extra machinery that many self-supervised methods require?**
+> 
+
+This is where **LeJEPA** comes in.
+
+Earlier methods such as BYOL typically use an asymmetric architecture involving an online network and a target network. The target network is updated separately, and mechanisms such as stop-gradient are used during training.
+
+LeJEPA takes a different route.
+
+It uses **SIGReg**, a statistical regularization mechanism, to encourage the learned representations to have desirable properties and to prevent representation collapse.
+
+So, very roughly, the training objective becomes:
+
+$$L = L_{\text{prediction}} + \lambda L_{\text{SIGReg}}$$
+
+The first term encourages predictive representations to match.
+
+The second term prevents the representation from collapsing into something trivial.
+
+The significance is less about the exact loss function and more about the philosophy:
+
+> **Can we get useful predictive representations with a simpler training recipe and without relying on a separate target network?**
+> 
+
+This makes LeJEPA particularly interesting if you’re thinking about representation learning as a component in a larger world-modeling system.
+
+---
+
+## 5. LeVJEPA: Add Time and Causality
+
+The latest step in this progression is **LeVJEPA**, which brings the LeJEPA philosophy to video.
+
+At this point, the model isn’t just learning a useful representation of an image. It is learning a representation of a **changing world**.
+
+One particularly interesting aspect is the use of causal or block-causal attention.
+
+Why does causality matter?
+
+Imagine you’re trying to represent the state of the world at time $t$.
+
+You don’t want the representation at time $t$ to secretly depend on information from frame $t+10$.
+
+That would be “cheating” if you eventually want to use the representation online.
+
+Ideally:
+
+$$z_t=f(x_1,x_2,\ldots,x_t)$$
+
+rather than:
+
+$$z_t=f(x_1,\ldots,x_t,x_{t+1},\ldots)$$
+
+In other words:
+
+> **The representation of the present should be computable from the present and the past—not from the future.**
+> 
+
+This makes the representation much more naturally suited to streaming and online applications.
+
+And that is particularly relevant for robotics.
+
+A robot doesn’t get to see the future.
+
+It observes the world one moment at a time.
+
+---
+
+# So, Where Does the World Model Fit?
+
+This is probably the most important distinction to keep in mind.
+
+**JEPA, LeJEPA, and LeVJEPA are not necessarily world models themselves.**
+
+They are primarily concerned with learning **useful representations**.
+
+Think of them as learning the language in which the world is represented.
+
+A latent world model then learns the **dynamics of that representation**.
+
+For example:
+
+$$o_t \xrightarrow{\text{LeVJEPA}} z_t$$
+
+followed by:
+
+$$(z_t,a_t) \xrightarrow{\text{Latent WM}} \hat{z}_{t+1:t+H}$$
+
+So the two components have different jobs.
+
+**LeVJEPA:**
+
+> “What is a useful representation of the current world?”
+> 
+
+**Latent World Model:**
+
+> “How does that representation change when I take an action?”
+> 
+
+This distinction becomes particularly important when thinking about robotics.
+
+---
+
+# Why This Matters for Robot Safety
+
+This brings us to an interesting possibility.
+
+Suppose we want a robot to decide whether an action is safe.
+
+A conventional policy might simply do:
+
+```
+Observation
+     ↓
+VLA
+     ↓
+Action
+     ↓
+Execute
+```
+
+But that means the robot is largely committing to an action before explicitly reasoning about its consequences.
+
+A predictive safety architecture could instead do:
+
+```
+     Observation
+          ↓
+       LeVJEPA
+          ↓
+         zₜ
+          ↓
+     VLA / Policy
+          ↓
+  Candidate actions
+          ↓
+     Latent WM
+          ↓
+Predicted future states
+          ↓
+  Safety Verifier
+          ↓
+   SAFE / UNSAFE
+```
+
+Now the robot can effectively ask:
+
+> **“Before I execute this action, what does my model predict will happen?”**
+> 
+
+And then:
+
+> **“Does that predicted future look safe?”**
+> 
+
+This is fundamentally different from simply classifying the current image as safe or unsafe.
+
+---
+
+# The Evolution in One Picture
+
+The JEPA story can be viewed as a gradual shift toward predictive understanding:
+
+```
+I-JEPA
+  │
+  │  Learn useful representations
+  ↓
+V-JEPA
+  │
+  │  Add temporal structure
+  ↓
+V-JEPA 2
+  │
+  │  Add action-conditioned prediction
+  ↓
+LeJEPA
+  │
+  │  Simplify representation learning
+  ↓
+LeVJEPA
+  │
+  │  Bring simple predictive learning
+  │  + causal video representations
+  ↓
+Latent World Model
+  │
+  │  Learn action-conditioned dynamics
+  ↓
+Planning / Safety / Control
+```
+
+I wouldn’t interpret this as a strict sequence where every model replaces the previous one; they solve somewhat different problems.
+
+Rather, several complementary developments are happening:
+
+- **I-JEPA** showed the value of predicting representations instead of pixels.
+- **V-JEPA** extended predictive representations to video.
+- **V-JEPA 2** moved toward action-conditioned physical prediction.
+- **LeJEPA** explored a simpler way to learn non-collapsed representations.
+- **LeVJEPA** combines that philosophy with temporal and causal video representations.
+- A **latent world model** can then build on such representations to learn how the world evolves under actions.
+
+---
+
+# The Big Picture
+
+The broader trend is worth paying attention to.
+
+For a long time, much of computer vision focused on answering:
+
+> **“What is in this image?”**
+> 
+
+Generative video models shifted toward:
+
+> **“What could the next frames look like?”**
+> 
+
+JEPA-style models explore another possibility:
+
+> **“What representation of the future matters for understanding the world?”**
+> 
+
+And robotics pushes this one step further:
+
+> **“What will happen if I take this action?”**
+> 
+
+That last question is where representation learning starts becoming **world modeling**—and where it becomes especially relevant to planning and safety.
+
+For your safety architecture, the cleanest mental model is:
+
+$$\boxed{ \text{LeVJEPA} \rightarrow \text{representation} }$$
+
+$$\boxed{ \text{Latent WM} \rightarrow \text{action-conditioned dynamics} }$$
+
+$$\boxed{ \text{Safety Verifier} \rightarrow \text{evaluate predicted consequences} }$$
+
+Together, they form a potentially powerful pipeline:
+
+$$\boxed{ \text{Observe} \rightarrow \text{Represent} \rightarrow \text{Imagine} \rightarrow \text{Verify} \rightarrow \text{Act} }$$
+
+And that is arguably the more interesting direction for robotics: **rather than making the policy itself responsible for safety, give the robot the ability to imagine possible futures and explicitly check them before acting.**
